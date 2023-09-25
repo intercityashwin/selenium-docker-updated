@@ -32,18 +32,14 @@ pipeline{
                   bat "docker-compose -f test-suites.yaml up"
               }
         }
+	}
 
-         stage('Bring Grid Dowm'){
-
-            steps{
-                  bat "docker-compose -f grid.yaml down"
-               }
-        }
-
-        stage('Bring Tests Dowm'){
-            steps{
-                  bat "docker-compose -f test-suites.yaml down"
-               }
-        }
+	post{
+	    always{
+	        bat "docker-compose -f grid.yaml down"
+	        bat "docker-compose -f test-suites.yaml down"
+	        archiveArtifacts artifacts: 'output/flight-reservation/emailable-report.html', followSymlinks: false
+	        archiveArtifacts artifacts: 'output/vendor-portal/emailable-report.html', followSymlinks: false
+	    }
 	}
 }
