@@ -1,0 +1,11 @@
+{
+  "firstName": "Ashwin",
+  "lastName": "Rao",
+  "email": "interciyu@pop.com",
+  "password": "test@123",
+  "street": "123 main street",
+  "city": "Pune",
+  "zip": "50001",
+  "passengerCount": "3",
+  "expectedPrice": "$1753 USD"
+}
