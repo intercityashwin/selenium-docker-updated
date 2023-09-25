@@ -31,6 +31,7 @@ do
   sleep 1
 done
 
+
 # At this point, selenium grid should be up!
 echo "Selenium Grid is up and running. Running the test...."
 
@@ -41,4 +42,4 @@ java -cp 'libs/*' \
      -Dbrowser="${BROWSER:-chrome}" \
      org.testng.TestNG \
      -threadcount "${THREAD_COUNT:-1}" \
-      test-suites/"${TEST_SUITE}"
+     test-suites/"${TEST_SUITE}"
